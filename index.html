@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="externalResources/js/angular/angular.js"></script>
+        <script src="externalResources/js/angular/angular-route.js"></script>
+        <script src="externalResources/js/bootstrap/ui-bootstrap.js"></script>
+        <script src="externalResources/js/angular/angular-animate.js"></script>
+        <script src="externalResources/js/angular/angular-sanitize.js"></script>
+        <script src="internalResources/js/tilesModule.js"></script>
+        <script src="internalResources/js/tilesController.js"></script>
+        <link rel="stylesheet" href="externalResources/css/bootstrap/bootstrap.min.css"/>
+        <link rel="stylesheet" href="internalResources/css/index.css">
+    </head>
+    <body ng-app="mainApp" ng-controller="tilesController">
+        <div class="tilegame">
+        <img src="internalResources/images/images.jpg"/>
+         </div>
+         <div class="outlineGrid">
+               <div ng-repeat="x in records">
+                    <div class="col-xs-3" ng-class="(x % 2 == 0) ? 'tilesEven' :'tilesOdd'"  ng-click="(x % 2 == 0)? delete(x) : doNothing()">{{x}}</div> 
+                </div>
+          </div>       
+    </body>
+</html>
